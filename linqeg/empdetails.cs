@@ -27,6 +27,8 @@ namespace linqeg
             this.empage = empage;
             this.salary = salary;
         }
+
+        //get all emp detals
         public static List<EmpDetails> getEmpDetails()
         {
             listemp.Add(new EmpDetails(12, "rana", 30, 60000));
@@ -38,6 +40,8 @@ namespace linqeg
 
         }
 
+
+        //getting emp details by id
         public static EmpDetails getempdetailbyID(int id)
         {
             var employee = (from emp in listemp where emp.empid == id select emp).SingleOrDefault();
