@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace linqeg
 {
-    internal class EmpDetails
+    public class EmpDetails
     {
         public int empid { get; set; }
 
@@ -42,6 +42,13 @@ namespace linqeg
         {
             var employee = (from emp in listemp where emp.empid == id select emp).SingleOrDefault();
             return employee;
+        }
+
+
+        // creating new employee
+        public static void CreatenewEmployee(EmpDetails newemp)
+        {
+            listemp.Add(newemp);
         }
 
         public override string ToString()
